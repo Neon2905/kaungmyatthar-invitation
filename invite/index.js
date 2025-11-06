@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const recipient = params.get('name'); // null if not present
 
     //TODO: Check if there's a valid recipient name
-    
+
 
     const content = document.getElementById('content');
-    content.innerHTML = `<img src='../../resources/${recipient || 'default'}.jpg' alt='${recipient}' class="flex md:h-full"/>`;
+    content.innerHTML = `<img src='../resources/${recipient || 'default'}.jpg' alt='${recipient}' class="flex md:h-full"/>`;
 });
