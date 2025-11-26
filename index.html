@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KMT - Plenary Festival</title>
+    <link rel="icon" type="image/png" href="../resources/logo.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      id="slideshow"
+      class="flex justify-center items-center h-screen bg-black"
+    >
+      <img
+        src="/resources/theme.jpg"
+        alt="photo 1"
+        class="absolute md:h-full object-cover object-center transition-opacity duration-1000 opacity-100"
+      />
+      <img
+        src="/resources/Poster-1.jpg"
+        alt="photo 2"
+        class="absolute md:h-full object-cover object-center transition-opacity duration-1000 opacity-0"
+      />
+      <img
+        src="/resources/Poster.jpg"
+        alt="photo 3"
+        class="absolute md:h-full object-cover object-center transition-opacity duration-1000 opacity-0"
+      />
+      <script>
+        (function () {
+          const imgs = document.querySelectorAll("#slideshow img");
+          let i = 0;
+          setInterval(() => {
+            const next = (i + 1) % imgs.length;
+            imgs[i].classList.remove("opacity-100");
+            imgs[i].classList.add("opacity-0");
+            imgs[next].classList.remove("opacity-0");
+            imgs[next].classList.add("opacity-100");
+            i = next;
+          }, 3000); // change every 3s
+        })();
+      </script>
+    </div>
+  </body>
+</html>
